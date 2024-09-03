@@ -11,7 +11,7 @@
 
 
   - name: print the information
-    vars: 
+    vars:   # task override with ansible
       COURSE: "Ansible"
     ansible.builtin.debug:
       msg: "Hi I am learning Course {{COURSE}},Duration is {{DURATION}},and Trainer is {{TRAINER}} "
