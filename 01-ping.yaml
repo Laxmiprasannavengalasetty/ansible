@@ -2,4 +2,4 @@
   hosts: web #which hosts your ansible wants to connect
   tasks: #list of tasks/modules/collections
   - name: ping the server
-    ansible.builtin.ping:
+    ansible.builtin.ping:  #is a module in Ansible used for testing the connectivity between the Ansible control machine and the managed nodes
