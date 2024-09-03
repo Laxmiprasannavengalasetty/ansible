@@ -3,7 +3,7 @@
   hosts: web #which hosts your ansible wants to connect
   tasks: #list of tasks/modules/collections
   - name: Play-01 TASK-01
-    ansible.builtin.ping:
+    ansible.builtin.debug:
      msg: "this is from PLAY-01 TASK -01"
 
 #PLAY-02
@@ -11,5 +11,5 @@
   hosts: web #which hosts your ansible wants to connect
   tasks:  # list of tasks/modules/collections
   - name: Play-02 TASK-01
-    ansible.builtin.ping:
+    ansible.builtin.debug:
      msg: "this is from PLAY-02 TASK -01"
