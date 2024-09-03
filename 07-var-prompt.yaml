@@ -10,4 +10,4 @@
   tasks: 
   - name: Print the course information
     ansible.buitlin.debug:
-    msg: "Hi I am learning Course {{COURSE}},Duration is {{DURATION}},and Trainer is {{TRAINER}} " 
+     msg: "Hi I am learning Course {{COURSE}},Duration is {{DURATION}},and Trainer is {{TRAINER}} " 
