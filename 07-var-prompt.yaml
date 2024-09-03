@@ -8,6 +8,6 @@
   - name: TRAINER
     prompt: Please enter the Trainer 
   tasks: 
-  - name: print the course information
-    ansible.buitlin.debug:
-     msg: "Hi I am learning Course {{COURSE}},Duration is {{DURATION}},and Trainer is {{TRAINER}} " 
+  - name: print the course info
+    ansible.builtin.debug:
+     msg: "Hi I am learning Course {{COURSE}},Duration is {{DURATION}},and Trainer is {{TRAINER}} "
