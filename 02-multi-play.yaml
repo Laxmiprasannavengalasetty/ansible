@@ -3,7 +3,7 @@
   hosts: web #which hosts your ansible wants to connect
   tasks: #list of tasks/modules/collections
   - name: Play-01 TASK-01
-    ansible.builtin.debug:
+    ansible.builtin.debug:      # printing
      msg: "this is from PLAY-01 TASK -01"
 
 #PLAY-02
