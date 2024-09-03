@@ -3,6 +3,6 @@
   become: yes
   tasks: 
   - name: install nginx
-     ansible.builtin.package: # heterogenioous module that can work for all distrubutions
+    ansible.builtin.package: # heterogenioous module that can work for all distrubutions
      name: nginx
      state: present
