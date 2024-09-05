@@ -2,7 +2,7 @@
   hosts: loacl
   connection: local
   become: yes
-  var_prompt:
+  vars_prompt:
   - name: my_number
     prompt: please enter the number
     private: false  # not confidential
