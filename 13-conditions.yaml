@@ -1,7 +1,5 @@
 - name: create user
-  hosts: loacl
-  connection: local
-  become: yes
+  hosts: web
   tasks:
   - name: check user is exist or not
     ansible.builtin.command: id expense
