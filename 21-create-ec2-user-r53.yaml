@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-    subnet_id:
-    sg_id:
-    ami_id:
+    subnet_id: subnet-dc2688fd
+    sg_id: sg-026ccdb1c65b84e63
+    ami_id: ami-09c813fb71547fc4f
     instances:
     - mysql
     - backend

@@ -18,39 +18,39 @@
     ansible.builtin.debug:
       msg: " {{ greeting | lower }}"
 
-  - name: finding the unique values
-    vars:
-     numbers: [ 1, 2, 3, 3, 4,6,8,1]
-    ansible.builtin.debug:
-     msg: " {{ greeting | unique }}"
+  # - name: finding the unique values
+  #   vars:
+  #    numbers: [ 1, 2, 3, 3, 4,6,8,1]
+  #   ansible.builtin.debug:
+  #    msg: " {{ greeting | unique }}"
   
-  - name: finding min and max numbers
-    vars:
-     numbers: [ 1, 33, 83, 223, 4,6,8,1]
-    ansible.builtin.debug:
-     msg: " Min: {{ number | min }}, Max: {{ number | max }}"
+  # - name: finding min and max numbers
+  #   vars:
+  #    numbers: [ 1, 33, 83, 223, 4,6,8,1]
+  #   ansible.builtin.debug:
+  #    msg: " Min: {{ number | min }}, Max: {{ number | max }}"
 
-  - name: map to list
-    vars: 
-      course:
-        name: "DevOps with AWS"
-        duration: 120
-        trainer: "Laxmi"
-    ansible.builtin.debug:
-      msg: " {{ course | dict2items }}"
+  # - name: map to list
+  #   vars: 
+  #     course:
+  #       name: "DevOps with AWS"
+  #       duration: 120
+  #       trainer: "Laxmi"
+  #   ansible.builtin.debug:
+  #     msg: " {{ course | dict2items }}"
   
-  - name: list to map
-    vars:
-     course:
-     - { "key": "name","value": "DevOps with AWS" }
-     - { "key": "duration","value": 120 }
-     - { "key": "trainer","value": "laxmi" }
-    ansible.builtin.debug:
-      msg: " {{ course | items2dict }}"
+  # - name: list to map
+  #   vars:
+  #    course:
+  #    - { "key": "name","value": "DevOps with AWS" }
+  #    - { "key": "duration","value": 120 }
+  #    - { "key": "trainer","value": "laxmi" }
+  #   ansible.builtin.debug:
+  #     msg: " {{ course | items2dict }}"
 
-  - name: check ip address
-    vars:
-     myip: "123.456.2.4"
-    ansible.builtin.debug:
-     msg: "{{ myip | ansible.utils.ipv4 }}""
+  # - name: check ip address
+  #   vars:
+  #    myip: "123.456.2.4"
+  #   ansible.builtin.debug:
+  #    msg: "{{ myip | ansible.utils.ipv4 }}""
   
