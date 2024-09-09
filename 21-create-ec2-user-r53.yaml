@@ -55,7 +55,7 @@
        wait: True
        overwrite: True
     loop: " {{ ec2_instance.results }}"
-     when: item.item =="frontend"
+    when: item.item =="frontend"
 
 
 
