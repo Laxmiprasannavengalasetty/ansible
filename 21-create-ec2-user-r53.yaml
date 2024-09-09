@@ -35,7 +35,7 @@
   - name: create r53 private records
     amazon.aws.route53:
       state: present
-      zone: " {{ zone }}"
+      zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"  # mysql.lpdevops.online
       type: A
       ttl: 1
@@ -48,7 +48,7 @@
   - name: create r53 public for frontend
     amazon.aws.route53:
       state: present
-      zone: " {{ zone }}"
+      zone: "{{ zone }}"
       record: "{{ zone }}"  #lpdevops.online
       type: A
       ttl: 1
