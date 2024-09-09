@@ -3,7 +3,7 @@
   connection: local
   vars:
     subnet_id: subnet-dc2688fd
-    sg_id: sg-026ccdb1c65b84e63
+    sg_id: "sg-026ccdb1c65b84e63"
     ami_id: ami-09c813fb71547fc4f
     instances:
     - mysql
@@ -20,42 +20,42 @@
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: "  {{ subnet_id}}" 
+      vpc_subnet_id: "{{ subnet_id}}" 
       instance_type: "t3.micro"
       security_group: "{{ sg_id}}"
       image_id: "{{ ami_id }}"
-    loop: "{{ instance }}"  
-    register: ec2_instance
+    loop: "{{ instances }}"  
+  #   register: ec2_instance
 
-  - name: print the output
-    ansible.builtin.debug:
-      msg: " {{ ec2_instance }}"
+  # - name: print the output
+  #   ansible.builtin.debug:
+  #     msg: " {{ ec2_instance }}"
     
-  # private IP R53
-  - name: create r53 private record
-    amazon.aws.route53:
-      state: present
-      zone: " {{ zone }}"
-      record: "{{ item.item }}.{{ zone }}"  # mysql.lpdevops.online
-      type: A
-      tttl: 1
-      value: "{{ item.instance[0].public_ip_address }}"
-      wait: True
-      overwrite: True
-    loop: " {{ ec2_instance.results }}"
+  # # private IP R53
+  # - name: create r53 private record
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: " {{ zone }}"
+  #     record: "{{ item.item }}.{{ zone }}"  # mysql.lpdevops.online
+  #     type: A
+  #     tttl: 1
+  #     value: "{{ item.instance[0].public_ip_address }}"
+  #     wait: True
+  #     overwrite: True
+  #   loop: " {{ ec2_instance.results }}"
 
-  - name: create r53 private record for frontend
-    amazon.aws.route53:
-      state: present
-      zone: " {{ zone }}"
-      record: "{{ zone }}"  #lpdevops.online
-      type: A
-      tttl: 1
-      value: "{{ item.instance[0].public_ip_address }}"
-      wait: True
-      overwrite: True
-    loop: " {{ ec2_instance.results }}"
-    when: item.item =="frontend"
+  # - name: create r53 private record for frontend
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: " {{ zone }}"
+  #     record: "{{ zone }}"  #lpdevops.online
+  #     type: A
+  #     tttl: 1
+  #     value: "{{ item.instance[0].public_ip_address }}"
+  #     wait: True
+  #     overwrite: True
+  #   loop: " {{ ec2_instance.results }}"
+  #   when: item.item =="frontend"
 
 
 
