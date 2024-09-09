@@ -34,7 +34,7 @@
           # # private IP R53
   - name: create r53 private record
     amazon.aws.route53:
-      state: present
+      state: running
       zone: " {{ zone }}"
       record: "{{ item.item }}.{{ zone }}"  # mysql.lpdevops.online
       type: A
