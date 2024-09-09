@@ -39,7 +39,7 @@
       record: "{{ item.item }}.{{ zone }}"  # mysql.lpdevops.online
       type: A
       tttl: 1
-      value: "{{ item.instance[0].public_ip_address }}"
+     # value: "{{ item.instance[0].public_ip_address }}"
       wait: True
       overwrite: True
     loop: " {{ ec2_instances.results }}"
