@@ -2,8 +2,8 @@
   hosts: local
   connection: local
   vars:
-    subnet_id: subnet-dc2688fd
-    sg_id: "sg-026ccdb1c65b84e63"
+    subnet_id: subnet-a81fb3f7
+    sg_id: "sg-0ee90ea402bbcfee8"
     ami_id: ami-09c813fb71547fc4f
     instances:
     - mysql
